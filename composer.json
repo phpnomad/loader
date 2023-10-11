@@ -1,5 +1,5 @@
 {
-    "name": "phoenix/repository",
+    "name": "phoenix/loader",
     "description": "",
     "type": "library",
     "homepage": "https://github.com/phoenix/core",
@@ -16,12 +16,12 @@
     ],
     "autoload": {
         "psr-4": {
-            "Phoenix\\Core\\": "lib/"
+            "Phoenix\\Loader\\": "lib/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Phoenix\\Core\\Tests\\": "tests/"
+            "Phoenix\\Loader\\Tests\\": "tests/"
         }
     },
     "authors": [
