@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a8e5cde80f65571ba2c265299091845d",
+    "content-hash": "8271bd0a4f8b72b4361186de7d0554e4",
     "packages": [],
     "packages-dev": [
         {
@@ -760,6 +760,57 @@
                 "source": "https://github.com/phar-io/version/tree/3.2.1"
             },
             "time": "2022-02-21T01:04:05+00:00"
+        },
+        {
+            "name": "phoenix/di",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:rooted-phoenix/di.git",
+                "reference": "7e3b55e75b3ad383f1f4f44a0434a73d9c9eda7b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/rooted-phoenix/di/zipball/7e3b55e75b3ad383f1f4f44a0434a73d9c9eda7b",
+                "reference": "7e3b55e75b3ad383f1f4f44a0434a73d9c9eda7b",
+                "shasum": ""
+            },
+            "require-dev": {
+                "phoenix/tests": "^0.1.0",
+                "phoenix/utils": "dev-main"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Phoenix\\Di\\": "lib/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Phoenix\\Di\\Tests\\": "tests/"
+                }
+            },
+            "scripts": {
+                "php-cs-fixer": [
+                    "php-cs-fixer fix"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Alex Standiford",
+                    "email": "alex@standiford.us"
+                }
+            ],
+            "homepage": "https://github.com/phoenix/core",
+            "support": {
+                "source": "https://github.com/rooted-phoenix/di/tree/main",
+                "issues": "https://github.com/rooted-phoenix/di/issues"
+            },
+            "time": "2023-10-13T11:24:22+00:00"
         },
         {
             "name": "phoenix/facade",
@@ -3971,7 +4022,8 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "phoenix/facade": 20,
-        "phoenix/utils": 20
+        "phoenix/utils": 20,
+        "phoenix/di": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
