@@ -76,6 +76,8 @@
       <path value="$PROJECT_DIR$/vendor/sebastian/type" />
       <path value="$PROJECT_DIR$/vendor/sebastian/code-unit" />
       <path value="$PROJECT_DIR$/vendor/friendsofphp/php-cs-fixer" />
+      <path value="$PROJECT_DIR$/vendor/phoenix/utils" />
+      <path value="$PROJECT_DIR$/vendor/phoenix/facade" />
     </include_path>
   </component>
   <component name="PhpInterpreters">
