@@ -13,20 +13,10 @@ class Bootstrapper implements Loadable
 {
     use CanLoadInitializers;
 
-    protected function __construct(Container $container, ...$initializers)
+    public function __construct(Container $container, ...$initializers)
     {
         $this->container = $container;
         $this->initializers = $initializers;
-    }
-
-    /**
-     * @param HasClassDefinitions|Loadable|HasLoadCondition|HasFacades ...$initializers
-     * @return void
-     */
-    public static function init(...$initializers)
-    {
-        $instance = new static(new Container(), ...$initializers);
-        $instance->load();
     }
 
     /**
