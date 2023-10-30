@@ -44,7 +44,9 @@
         }
     ],
     "require-dev": {
-        "phoenix/tests": "^0.1.0",
+        "phoenix/tests": "^0.1.0"
+    },
+    "require": {
         "phoenix/facade": "dev-main",
         "phoenix/utils": "dev-main",
         "phoenix/di": "dev-main"

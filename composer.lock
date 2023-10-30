@@ -4,8 +4,162 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8271bd0a4f8b72b4361186de7d0554e4",
-    "packages": [],
+    "content-hash": "5cdb49059722b99a8f92f51c27bd0596",
+    "packages": [
+        {
+            "name": "phoenix/di",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:phpnomad/di.git",
+                "reference": "801b9ac23fe42c5e89135ea3a228b1cab25be84b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpnomad/di/zipball/801b9ac23fe42c5e89135ea3a228b1cab25be84b",
+                "reference": "801b9ac23fe42c5e89135ea3a228b1cab25be84b",
+                "shasum": ""
+            },
+            "require-dev": {
+                "phoenix/tests": "^0.1.0",
+                "phoenix/utils": "dev-main"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Phoenix\\Di\\": "lib/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Phoenix\\Di\\Tests\\": "tests/"
+                }
+            },
+            "scripts": {
+                "php-cs-fixer": [
+                    "php-cs-fixer fix"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Alex Standiford",
+                    "email": "alex@standiford.us"
+                }
+            ],
+            "homepage": "https://github.com/phoenix/core",
+            "support": {
+                "source": "https://github.com/phpnomad/di/tree/main",
+                "issues": "https://github.com/phpnomad/di/issues"
+            },
+            "time": "2023-10-26T12:43:31+00:00"
+        },
+        {
+            "name": "phoenix/facade",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:phpnomad/facade.git",
+                "reference": "d43dfeb4956d5b0ef524b0a1971ab142d586c49f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpnomad/facade/zipball/d43dfeb4956d5b0ef524b0a1971ab142d586c49f",
+                "reference": "d43dfeb4956d5b0ef524b0a1971ab142d586c49f",
+                "shasum": ""
+            },
+            "require-dev": {
+                "phoenix/di": "dev-main",
+                "phoenix/logger": "dev-main",
+                "phoenix/tests": "^0.1.0"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Phoenix\\Facade\\": "lib/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Phoenix\\Facade\\Tests\\": "tests/"
+                }
+            },
+            "scripts": {
+                "php-cs-fixer": [
+                    "php-cs-fixer fix"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Alex Standiford",
+                    "email": "alex@standiford.us"
+                }
+            ],
+            "homepage": "https://github.com/phoenix/core",
+            "support": {
+                "source": "https://github.com/phpnomad/facade/tree/main",
+                "issues": "https://github.com/phpnomad/facade/issues"
+            },
+            "time": "2023-10-19T12:14:12+00:00"
+        },
+        {
+            "name": "phoenix/utils",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:phpnomad/utils.git",
+                "reference": "53354181a76aa984f2cf0903eb64948ab8f49af2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpnomad/utils/zipball/53354181a76aa984f2cf0903eb64948ab8f49af2",
+                "reference": "53354181a76aa984f2cf0903eb64948ab8f49af2",
+                "shasum": ""
+            },
+            "require-dev": {
+                "phoenix/tests": "^0.1.0"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Phoenix\\Utils\\": "lib/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Phoenix\\Utils\\Tests\\": "tests/"
+                }
+            },
+            "scripts": {
+                "php-cs-fixer": [
+                    "php-cs-fixer fix"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Alex Standiford",
+                    "email": "alex@standiford.us"
+                }
+            ],
+            "homepage": "https://github.com/phoenix/core",
+            "support": {
+                "source": "https://github.com/phpnomad/utils/tree/main",
+                "issues": "https://github.com/phpnomad/utils/issues"
+            },
+            "time": "2023-10-19T15:12:14+00:00"
+        }
+    ],
     "packages-dev": [
         {
             "name": "composer/pcre",
@@ -300,16 +454,16 @@
         },
         {
             "name": "friendsofphp/php-cs-fixer",
-            "version": "v3.35.1",
+            "version": "v3.37.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHP-CS-Fixer/PHP-CS-Fixer.git",
-                "reference": "ec1ccc264994b6764882669973ca435cf05bab08"
+                "reference": "c3fe76976081ab871aa654e872da588077e19679"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHP-CS-Fixer/PHP-CS-Fixer/zipball/ec1ccc264994b6764882669973ca435cf05bab08",
-                "reference": "ec1ccc264994b6764882669973ca435cf05bab08",
+                "url": "https://api.github.com/repos/PHP-CS-Fixer/PHP-CS-Fixer/zipball/c3fe76976081ab871aa654e872da588077e19679",
+                "reference": "c3fe76976081ab871aa654e872da588077e19679",
                 "shasum": ""
             },
             "require": {
@@ -381,7 +535,7 @@
             ],
             "support": {
                 "issues": "https://github.com/PHP-CS-Fixer/PHP-CS-Fixer/issues",
-                "source": "https://github.com/PHP-CS-Fixer/PHP-CS-Fixer/tree/v3.35.1"
+                "source": "https://github.com/PHP-CS-Fixer/PHP-CS-Fixer/tree/v3.37.1"
             },
             "funding": [
                 {
@@ -389,7 +543,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-10-12T13:47:26+00:00"
+            "time": "2023-10-29T20:51:23+00:00"
         },
         {
             "name": "hamcrest/hamcrest-php",
@@ -762,118 +916,16 @@
             "time": "2022-02-21T01:04:05+00:00"
         },
         {
-            "name": "phoenix/di",
-            "version": "dev-main",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:rooted-phoenix/di.git",
-                "reference": "7e3b55e75b3ad383f1f4f44a0434a73d9c9eda7b"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/rooted-phoenix/di/zipball/7e3b55e75b3ad383f1f4f44a0434a73d9c9eda7b",
-                "reference": "7e3b55e75b3ad383f1f4f44a0434a73d9c9eda7b",
-                "shasum": ""
-            },
-            "require-dev": {
-                "phoenix/tests": "^0.1.0",
-                "phoenix/utils": "dev-main"
-            },
-            "default-branch": true,
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Phoenix\\Di\\": "lib/"
-                }
-            },
-            "autoload-dev": {
-                "psr-4": {
-                    "Phoenix\\Di\\Tests\\": "tests/"
-                }
-            },
-            "scripts": {
-                "php-cs-fixer": [
-                    "php-cs-fixer fix"
-                ]
-            },
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Alex Standiford",
-                    "email": "alex@standiford.us"
-                }
-            ],
-            "homepage": "https://github.com/phoenix/core",
-            "support": {
-                "source": "https://github.com/rooted-phoenix/di/tree/main",
-                "issues": "https://github.com/rooted-phoenix/di/issues"
-            },
-            "time": "2023-10-13T11:24:22+00:00"
-        },
-        {
-            "name": "phoenix/facade",
-            "version": "dev-main",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:rooted-phoenix/facade.git",
-                "reference": "0f076a0bebc80eda7e607f5c6185a4b2c40c6c77"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/rooted-phoenix/facade/zipball/0f076a0bebc80eda7e607f5c6185a4b2c40c6c77",
-                "reference": "0f076a0bebc80eda7e607f5c6185a4b2c40c6c77",
-                "shasum": ""
-            },
-            "require-dev": {
-                "phoenix/di": "dev-main",
-                "phoenix/tests": "^0.1.0"
-            },
-            "default-branch": true,
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Phoenix\\Facade\\": "lib/"
-                }
-            },
-            "autoload-dev": {
-                "psr-4": {
-                    "Phoenix\\Facade\\Tests\\": "tests/"
-                }
-            },
-            "scripts": {
-                "php-cs-fixer": [
-                    "php-cs-fixer fix"
-                ]
-            },
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Alex Standiford",
-                    "email": "alex@standiford.us"
-                }
-            ],
-            "homepage": "https://github.com/phoenix/core",
-            "support": {
-                "source": "https://github.com/rooted-phoenix/facade/tree/main",
-                "issues": "https://github.com/rooted-phoenix/facade/issues"
-            },
-            "time": "2023-10-13T12:06:51+00:00"
-        },
-        {
             "name": "phoenix/tests",
             "version": "0.1.0",
             "source": {
                 "type": "git",
-                "url": "git@github.com:rooted-phoenix/tests.git",
+                "url": "git@github.com:phpnomad/tests.git",
                 "reference": "3e5d2dee9c6bada8f74dc5fd6531a30c5ce582a2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rooted-phoenix/tests/zipball/3e5d2dee9c6bada8f74dc5fd6531a30c5ce582a2",
+                "url": "https://api.github.com/repos/phpnomad/tests/zipball/3e5d2dee9c6bada8f74dc5fd6531a30c5ce582a2",
                 "reference": "3e5d2dee9c6bada8f74dc5fd6531a30c5ce582a2",
                 "shasum": ""
             },
@@ -914,56 +966,6 @@
                 "chat": "https://matrix.to/#/#project-phoenix:matrix.org"
             },
             "time": "2023-10-05T10:03:49+00:00"
-        },
-        {
-            "name": "phoenix/utils",
-            "version": "dev-main",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:rooted-phoenix/utils.git",
-                "reference": "1c45ab19a547e292a58981892c7bf40f4fc312c6"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/rooted-phoenix/utils/zipball/1c45ab19a547e292a58981892c7bf40f4fc312c6",
-                "reference": "1c45ab19a547e292a58981892c7bf40f4fc312c6",
-                "shasum": ""
-            },
-            "require-dev": {
-                "phoenix/tests": "^0.1.0"
-            },
-            "default-branch": true,
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Phoenix\\Utils\\": "lib/"
-                }
-            },
-            "autoload-dev": {
-                "psr-4": {
-                    "Phoenix\\Utils\\Tests\\": "tests/"
-                }
-            },
-            "scripts": {
-                "php-cs-fixer": [
-                    "php-cs-fixer fix"
-                ]
-            },
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Alex Standiford",
-                    "email": "alex@standiford.us"
-                }
-            ],
-            "homepage": "https://github.com/phoenix/core",
-            "support": {
-                "source": "https://github.com/rooted-phoenix/utils/tree/main",
-                "issues": "https://github.com/rooted-phoenix/utils/issues"
-            },
-            "time": "2023-10-11T18:55:03+00:00"
         },
         {
             "name": "phpstan/extension-installer",
@@ -1015,12 +1017,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpstan.git",
-                "reference": "a26b23c53ff9b9ad18329d0f7ba3f93d6a247227"
+                "reference": "b1d12a441d48c9e8ee0ca089fbeb92e188fa864f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/a26b23c53ff9b9ad18329d0f7ba3f93d6a247227",
-                "reference": "a26b23c53ff9b9ad18329d0f7ba3f93d6a247227",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/b1d12a441d48c9e8ee0ca089fbeb92e188fa864f",
+                "reference": "b1d12a441d48c9e8ee0ca089fbeb92e188fa864f",
                 "shasum": ""
             },
             "require": {
@@ -1070,7 +1072,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-10-13T11:10:20+00:00"
+            "time": "2023-10-29T08:00:35+00:00"
         },
         {
             "name": "phpstan/phpstan-mockery",
@@ -1129,12 +1131,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "0b6cb84a359426d34e439ce6d1173b41e07cb672"
+                "reference": "6dddb1a140da5120432a85c1054950f6aaab4ea5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/0b6cb84a359426d34e439ce6d1173b41e07cb672",
-                "reference": "0b6cb84a359426d34e439ce6d1173b41e07cb672",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/6dddb1a140da5120432a85c1054950f6aaab4ea5",
+                "reference": "6dddb1a140da5120432a85c1054950f6aaab4ea5",
                 "shasum": ""
             },
             "require": {
@@ -1199,7 +1201,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-10-06T09:53:04+00:00"
+            "time": "2023-10-29T06:48:55+00:00"
         },
         {
             "name": "phpunit/php-file-iterator",
@@ -1448,12 +1450,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "18a76cf7293527f275342720eeb063dff346c97e"
+                "reference": "9fa21014f4c615cf231b659fb7ea18cc402e96f2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/18a76cf7293527f275342720eeb063dff346c97e",
-                "reference": "18a76cf7293527f275342720eeb063dff346c97e",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/9fa21014f4c615cf231b659fb7ea18cc402e96f2",
+                "reference": "9fa21014f4c615cf231b659fb7ea18cc402e96f2",
                 "shasum": ""
             },
             "require": {
@@ -1543,7 +1545,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-10-06T09:52:37+00:00"
+            "time": "2023-10-29T06:48:00+00:00"
         },
         {
             "name": "psr/container",
@@ -2673,12 +2675,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "2edf780da8823a82a2a7d33be54a4cbce48b8b4e"
+                "reference": "d9c21b11e19aaa3288d714015904debfca0da95d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/2edf780da8823a82a2a7d33be54a4cbce48b8b4e",
-                "reference": "2edf780da8823a82a2a7d33be54a4cbce48b8b4e",
+                "url": "https://api.github.com/repos/symfony/console/zipball/d9c21b11e19aaa3288d714015904debfca0da95d",
+                "reference": "d9c21b11e19aaa3288d714015904debfca0da95d",
                 "shasum": ""
             },
             "require": {
@@ -2703,9 +2705,12 @@
                 "symfony/config": "^5.4|^6.0|^7.0",
                 "symfony/dependency-injection": "^5.4|^6.0|^7.0",
                 "symfony/event-dispatcher": "^5.4|^6.0|^7.0",
+                "symfony/http-foundation": "^6.4|^7.0",
+                "symfony/http-kernel": "^6.4|^7.0",
                 "symfony/lock": "^5.4|^6.0|^7.0",
                 "symfony/messenger": "^5.4|^6.0|^7.0",
                 "symfony/process": "^5.4|^6.0|^7.0",
+                "symfony/stopwatch": "^5.4|^6.0|^7.0",
                 "symfony/var-dumper": "^5.4|^6.0|^7.0"
             },
             "type": "library",
@@ -2756,7 +2761,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-10-13T09:39:15+00:00"
+            "time": "2023-10-17T13:22:42+00:00"
         },
         {
             "name": "symfony/deprecation-contracts",
@@ -3681,12 +3686,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/process.git",
-                "reference": "7a98cdf5045b5b98ef2589b7d074f0c27eea4948"
+                "reference": "12f9ebe6c117798f5be8692c8abfdf1810b52671"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/process/zipball/7a98cdf5045b5b98ef2589b7d074f0c27eea4948",
-                "reference": "7a98cdf5045b5b98ef2589b7d074f0c27eea4948",
+                "url": "https://api.github.com/repos/symfony/process/zipball/12f9ebe6c117798f5be8692c8abfdf1810b52671",
+                "reference": "12f9ebe6c117798f5be8692c8abfdf1810b52671",
                 "shasum": ""
             },
             "require": {
@@ -3734,7 +3739,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-09-25T12:52:38+00:00"
+            "time": "2023-10-29T12:46:52+00:00"
         },
         {
             "name": "symfony/service-contracts",
