@@ -762,33 +762,33 @@
             "time": "2022-02-21T01:04:05+00:00"
         },
         {
-            "name": "phoenix/di",
+            "name": "phpnomad/di",
             "version": "dev-main",
             "source": {
                 "type": "git",
-                "url": "git@github.com:rooted-phoenix/di.git",
+                "url": "git@github.com:phpnomad/di.git",
                 "reference": "7e3b55e75b3ad383f1f4f44a0434a73d9c9eda7b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rooted-phoenix/di/zipball/7e3b55e75b3ad383f1f4f44a0434a73d9c9eda7b",
+                "url": "https://api.github.com/repos/phpnomad/di/zipball/7e3b55e75b3ad383f1f4f44a0434a73d9c9eda7b",
                 "reference": "7e3b55e75b3ad383f1f4f44a0434a73d9c9eda7b",
                 "shasum": ""
             },
             "require-dev": {
-                "phoenix/tests": "^0.1.0",
-                "phoenix/utils": "dev-main"
+                "phpnomad/tests": "^0.1.0",
+                "phpnomad/utils": "dev-main"
             },
             "default-branch": true,
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "Phoenix\\Di\\": "lib/"
+                    "PHPNomad\\Di\\": "lib/"
                 }
             },
             "autoload-dev": {
                 "psr-4": {
-                    "Phoenix\\Di\\Tests\\": "tests/"
+                    "PHPNomad\\Di\\Tests\\": "tests/"
                 }
             },
             "scripts": {
@@ -805,41 +805,41 @@
                     "email": "alex@standiford.us"
                 }
             ],
-            "homepage": "https://github.com/phoenix/core",
+            "homepage": "https://github.com/phpnomad/core",
             "support": {
-                "source": "https://github.com/rooted-phoenix/di/tree/main",
-                "issues": "https://github.com/rooted-phoenix/di/issues"
+                "source": "https://github.com/phpnomad/di/tree/main",
+                "issues": "https://github.com/phpnomad/di/issues"
             },
             "time": "2023-10-13T11:24:22+00:00"
         },
         {
-            "name": "phoenix/facade",
+            "name": "phpnomad/facade",
             "version": "dev-main",
             "source": {
                 "type": "git",
-                "url": "git@github.com:rooted-phoenix/facade.git",
+                "url": "git@github.com:phpnomad/facade.git",
                 "reference": "0f076a0bebc80eda7e607f5c6185a4b2c40c6c77"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rooted-phoenix/facade/zipball/0f076a0bebc80eda7e607f5c6185a4b2c40c6c77",
+                "url": "https://api.github.com/repos/phpnomad/facade/zipball/0f076a0bebc80eda7e607f5c6185a4b2c40c6c77",
                 "reference": "0f076a0bebc80eda7e607f5c6185a4b2c40c6c77",
                 "shasum": ""
             },
             "require-dev": {
-                "phoenix/di": "dev-main",
-                "phoenix/tests": "^0.1.0"
+                "phpnomad/di": "dev-main",
+                "phpnomad/tests": "^0.1.0"
             },
             "default-branch": true,
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "Phoenix\\Facade\\": "lib/"
+                    "PHPNomad\\Facade\\": "lib/"
                 }
             },
             "autoload-dev": {
                 "psr-4": {
-                    "Phoenix\\Facade\\Tests\\": "tests/"
+                    "PHPNomad\\Facade\\Tests\\": "tests/"
                 }
             },
             "scripts": {
@@ -856,24 +856,24 @@
                     "email": "alex@standiford.us"
                 }
             ],
-            "homepage": "https://github.com/phoenix/core",
+            "homepage": "https://github.com/phpnomad/core",
             "support": {
-                "source": "https://github.com/rooted-phoenix/facade/tree/main",
-                "issues": "https://github.com/rooted-phoenix/facade/issues"
+                "source": "https://github.com/phpnomad/facade/tree/main",
+                "issues": "https://github.com/phpnomad/facade/issues"
             },
             "time": "2023-10-13T12:06:51+00:00"
         },
         {
-            "name": "phoenix/tests",
+            "name": "phpnomad/tests",
             "version": "0.1.0",
             "source": {
                 "type": "git",
-                "url": "git@github.com:rooted-phoenix/tests.git",
+                "url": "git@github.com:phpnomad/tests.git",
                 "reference": "3e5d2dee9c6bada8f74dc5fd6531a30c5ce582a2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rooted-phoenix/tests/zipball/3e5d2dee9c6bada8f74dc5fd6531a30c5ce582a2",
+                "url": "https://api.github.com/repos/phpnomad/tests/zipball/3e5d2dee9c6bada8f74dc5fd6531a30c5ce582a2",
                 "reference": "3e5d2dee9c6bada8f74dc5fd6531a30c5ce582a2",
                 "shasum": ""
             },
@@ -888,7 +888,7 @@
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "Phoenix\\Tests\\": "lib/"
+                    "PHPNomad\\Tests\\": "lib/"
                 }
             },
             "scripts": {
@@ -905,43 +905,43 @@
                     "email": "alex@standiford.us"
                 }
             ],
-            "description": "Testing library for Phoenix",
-            "homepage": "https://github.com/rooted-phoenix/tests",
+            "description": "Testing library for PHPNomad",
+            "homepage": "https://github.com/phpnomad/tests",
             "support": {
-                "issues": "https://github.com/rooted-phoenix/tests/issues",
-                "forum": "https://github.com/rooted-phoenix/tests/discussions",
-                "source": "https://github.com/rooted-phoenix/tests/releases",
-                "chat": "https://matrix.to/#/#project-phoenix:matrix.org"
+                "issues": "https://github.com/phpnomad/tests/issues",
+                "forum": "https://github.com/phpnomad/tests/discussions",
+                "source": "https://github.com/phpnomad/tests/releases",
+                "chat": "https://matrix.to/#/#project-phpnomad:matrix.org"
             },
             "time": "2023-10-05T10:03:49+00:00"
         },
         {
-            "name": "phoenix/utils",
+            "name": "phpnomad/utils",
             "version": "dev-main",
             "source": {
                 "type": "git",
-                "url": "git@github.com:rooted-phoenix/utils.git",
+                "url": "git@github.com:phpnomad/utils.git",
                 "reference": "1c45ab19a547e292a58981892c7bf40f4fc312c6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rooted-phoenix/utils/zipball/1c45ab19a547e292a58981892c7bf40f4fc312c6",
+                "url": "https://api.github.com/repos/phpnomad/utils/zipball/1c45ab19a547e292a58981892c7bf40f4fc312c6",
                 "reference": "1c45ab19a547e292a58981892c7bf40f4fc312c6",
                 "shasum": ""
             },
             "require-dev": {
-                "phoenix/tests": "^0.1.0"
+                "phpnomad/tests": "^0.1.0"
             },
             "default-branch": true,
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "Phoenix\\Utils\\": "lib/"
+                    "PHPNomad\\Utils\\": "lib/"
                 }
             },
             "autoload-dev": {
                 "psr-4": {
-                    "Phoenix\\Utils\\Tests\\": "tests/"
+                    "PHPNomad\\Utils\\Tests\\": "tests/"
                 }
             },
             "scripts": {
@@ -958,10 +958,10 @@
                     "email": "alex@standiford.us"
                 }
             ],
-            "homepage": "https://github.com/phoenix/core",
+            "homepage": "https://github.com/phpnomad/core",
             "support": {
-                "source": "https://github.com/rooted-phoenix/utils/tree/main",
-                "issues": "https://github.com/rooted-phoenix/utils/issues"
+                "source": "https://github.com/phpnomad/utils/tree/main",
+                "issues": "https://github.com/phpnomad/utils/issues"
             },
             "time": "2023-10-11T18:55:03+00:00"
         },
@@ -4021,9 +4021,9 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "phoenix/facade": 20,
-        "phoenix/utils": 20,
-        "phoenix/di": 20
+        "phpnomad/facade": 20,
+        "phpnomad/utils": 20,
+        "phpnomad/di": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

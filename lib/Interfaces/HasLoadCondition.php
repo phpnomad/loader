@@ -1,6 +1,6 @@
 <?php
 
-namespace Phoenix\Loader\Interfaces;
+namespace PHPNomad\Loader\Interfaces;
 interface HasLoadCondition
 {
     /**

@@ -1,14 +1,14 @@
 <?php
 
-namespace Phoenix\Loader\Traits;
+namespace PHPNomad\Loader\Traits;
 
-use Phoenix\Di\Container;
-use Phoenix\Di\Interfaces\CanSetContainer;
-use Phoenix\Facade\Interfaces\HasFacades;
-use Phoenix\Loader\Interfaces\HasClassDefinitions;
-use Phoenix\Loader\Interfaces\HasLoadCondition;
-use Phoenix\Loader\Interfaces\Loadable;
-use Phoenix\Utils\Helpers\Arr;
+use PHPNomad\Di\Container;
+use PHPNomad\Di\Interfaces\CanSetContainer;
+use PHPNomad\Facade\Interfaces\HasFacades;
+use PHPNomad\Loader\Interfaces\HasClassDefinitions;
+use PHPNomad\Loader\Interfaces\HasLoadCondition;
+use PHPNomad\Loader\Interfaces\Loadable;
+use PHPNomad\Utils\Helpers\Arr;
 
 trait CanLoadInitializers
 {

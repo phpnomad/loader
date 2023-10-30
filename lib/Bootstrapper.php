@@ -1,13 +1,13 @@
 <?php
 
-namespace Phoenix\Loader;
+namespace PHPNomad\Loader;
 
-use Phoenix\Loader\Interfaces\HasClassDefinitions;
-use Phoenix\Facade\Interfaces\HasFacades;
-use Phoenix\Di\Container;
-use Phoenix\Loader\Interfaces\HasLoadCondition;
-use Phoenix\Loader\Interfaces\Loadable;
-use Phoenix\Loader\Traits\CanLoadInitializers;
+use PHPNomad\Loader\Interfaces\HasClassDefinitions;
+use PHPNomad\Facade\Interfaces\HasFacades;
+use PHPNomad\Di\Container;
+use PHPNomad\Loader\Interfaces\HasLoadCondition;
+use PHPNomad\Loader\Interfaces\Loadable;
+use PHPNomad\Loader\Traits\CanLoadInitializers;
 
 class Bootstrapper implements Loadable
 {

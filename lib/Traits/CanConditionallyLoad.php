@@ -1,6 +1,6 @@
 <?php
 
-namespace Phoenix\Loader\Traits;
+namespace PHPNomad\Loader\Traits;
 
 trait CanConditionallyLoad
 {
