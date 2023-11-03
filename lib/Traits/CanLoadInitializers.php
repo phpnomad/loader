@@ -5,8 +5,10 @@ namespace PHPNomad\Loader\Traits;
 use PHPNomad\Di\Container;
 use PHPNomad\Di\Exceptions\DiException;
 use PHPNomad\Di\Interfaces\CanSetContainer;
+use PHPNomad\Events\Interfaces\HasEventBindings;
 use PHPNomad\Events\Interfaces\HasListeners;
 use PHPNomad\Facade\Interfaces\HasFacades;
+use PHPNomad\Integrations\WordPress\Strategies\ActionBindingStrategy;
 use PHPNomad\Loader\Exceptions\LoaderException;
 use PHPNomad\Loader\Interfaces\HasClassDefinitions;
 use PHPNomad\Loader\Interfaces\HasLoadCondition;
@@ -68,6 +70,15 @@ trait CanLoadInitializers
                     $strategy = $this->container->get(MutationStrategy::class);
                     foreach ($actions as $action) {
                         $strategy->attach(fn() => $this->container->get($mutation), $action);
+                    }
+                }
+            }
+
+            if ($initializer instanceof HasEventBindings) {
+                foreach ($initializer->getEventBindings() as $binding => $actions) {
+                    $strategy = $this->container->get(ActionBindingStrategy::class);
+                    foreach ($actions as $action) {
+                        $strategy->bindAction($binding, $action);
                     }
                 }
             }
