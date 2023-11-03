@@ -5,13 +5,14 @@ namespace PHPNomad\Loader\Traits;
 use PHPNomad\Di\Container;
 use PHPNomad\Di\Exceptions\DiException;
 use PHPNomad\Di\Interfaces\CanSetContainer;
-use PHPNomad\Events\Interfaces\CanListen;
 use PHPNomad\Events\Interfaces\HasListeners;
 use PHPNomad\Facade\Interfaces\HasFacades;
 use PHPNomad\Loader\Exceptions\LoaderException;
 use PHPNomad\Loader\Interfaces\HasClassDefinitions;
 use PHPNomad\Loader\Interfaces\HasLoadCondition;
 use PHPNomad\Loader\Interfaces\Loadable;
+use PHPNomad\Mutator\Interfaces\HasMutations;
+use PHPNomad\Mutator\Interfaces\MutationStrategy;
 use PHPNomad\Utils\Helpers\Arr;
 
 trait CanLoadInitializers
@@ -62,6 +63,15 @@ trait CanLoadInitializers
                 }
             }
 
+            if ($initializer instanceof HasMutations) {
+                foreach ($initializer->getMutations() as $mutation => $actions) {
+                    $strategy = $this->container->get(MutationStrategy::class);
+                    foreach ($actions as $action) {
+                        $strategy->attach(fn() => $this->container->get($mutation), $action);
+                    }
+                }
+            }
+
             if ($initializer instanceof HasFacades) {
                 foreach ($initializer->getFacades() as $facade) {
                     $facade->setContainer($this->container);
@@ -71,7 +81,7 @@ trait CanLoadInitializers
             if ($initializer instanceof Loadable) {
                 $initializer->load();
             }
-        }catch(DiException $e){
+        } catch (DiException $e) {
             throw new LoaderException('Failed to load ' . get_class($initializer), 500, $e);
         }
     }

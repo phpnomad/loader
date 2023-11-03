@@ -24,6 +24,10 @@
         },
         {
             "type": "vcs",
+            "url": "https://github.com/phpnomad/mutator.git"
+        },
+        {
+            "type": "vcs",
             "url": "https://github.com/phpnomad/facade.git"
         }
     ],
@@ -49,6 +53,7 @@
     "require": {
         "phpnomad/facade": "dev-main",
         "phpnomad/utils": "dev-main",
+        "phpnomad/mutator": "dev-main",
         "phpnomad/di": "dev-main"
     },
     "config": {
