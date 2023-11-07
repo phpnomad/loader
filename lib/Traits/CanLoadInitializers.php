@@ -6,7 +6,6 @@ use PHPNomad\Di\Container;
 use PHPNomad\Di\Exceptions\DiException;
 use PHPNomad\Di\Interfaces\CanSetContainer;
 use PHPNomad\Events\Interfaces\HasEventBindings;
-use PHPNomad\Events\Interfaces\HasListeners;
 use PHPNomad\Facade\Interfaces\HasFacades;
 use PHPNomad\Integrations\WordPress\Strategies\ActionBindingStrategy;
 use PHPNomad\Loader\Exceptions\LoaderException;
@@ -56,12 +55,6 @@ trait CanLoadInitializers
             if ($initializer instanceof HasClassDefinitions) {
                 foreach ($initializer->getClassDefinitions() as $concrete => $abstracts) {
                     $this->container->bind($concrete, ...Arr::wrap($abstracts));
-                }
-            }
-
-            if ($initializer instanceof HasListeners) {
-                foreach ($initializer->getListeners() as $listener) {
-                    $this->container->get($listener)->listen();
                 }
             }
 
