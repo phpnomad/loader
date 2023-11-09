@@ -5,7 +5,9 @@ namespace PHPNomad\Loader\Traits;
 use PHPNomad\Di\Container;
 use PHPNomad\Di\Exceptions\DiException;
 use PHPNomad\Di\Interfaces\CanSetContainer;
+use PHPNomad\Events\Interfaces\CanListen;
 use PHPNomad\Events\Interfaces\HasEventBindings;
+use PHPNomad\Events\Interfaces\HasListeners;
 use PHPNomad\Facade\Interfaces\HasFacades;
 use PHPNomad\Integrations\WordPress\Strategies\ActionBindingStrategy;
 use PHPNomad\Loader\Exceptions\LoaderException;
@@ -21,7 +23,7 @@ trait CanLoadInitializers
     protected Container $container;
 
     /**
-     * @var array[HasClassDefinitions|Loadable|HasLoadCondition|HasFacades]
+     * @var array[HasClassDefinitions|Loadable|HasLoadCondition|HasFacades|HasListeners|HasMutations|HasEventBindings]
      */
     protected array $initializers = [];
 
@@ -36,7 +38,7 @@ trait CanLoadInitializers
     }
 
     /**
-     * @param HasClassDefinitions|Loadable|HasLoadCondition|HasFacades $initializer
+     * @param HasClassDefinitions|Loadable|HasLoadCondition|HasFacades|HasListeners|HasMutations|HasEventBindings $initializer
      * @return void
      * @throws LoaderException
      */
@@ -73,6 +75,15 @@ trait CanLoadInitializers
                     foreach ($actions as $action) {
                         $strategy->bindAction($binding, $action);
                     }
+                }
+            }
+
+            if($initializer instanceof HasListeners){
+                foreach($initializer->getListeners() as $listener){
+                    /** @var CanListen $instance */
+                    $instance = $this->container->get($listener);
+
+                    $instance->listen();
                 }
             }
 
