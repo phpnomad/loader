@@ -24,6 +24,10 @@
         },
         {
             "type": "vcs",
+            "url": "https://github.com/phpnomad/rest.git"
+        },
+        {
+            "type": "vcs",
             "url": "https://github.com/phpnomad/mutator.git"
         },
         {

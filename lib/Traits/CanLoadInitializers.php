@@ -16,7 +16,11 @@ use PHPNomad\Loader\Interfaces\HasLoadCondition;
 use PHPNomad\Loader\Interfaces\Loadable;
 use PHPNomad\Mutator\Interfaces\HasMutations;
 use PHPNomad\Mutator\Interfaces\MutationStrategy;
+use PHPNomad\Rest\Interfaces\Controller;
+use PHPNomad\Rest\Interfaces\HasControllers;
+use PHPNomad\Rest\Interfaces\RestStrategy;
 use PHPNomad\Utils\Helpers\Arr;
+use PHPNomad\Utils\Helpers\Str;
 
 trait CanLoadInitializers
 {
@@ -84,6 +88,13 @@ trait CanLoadInitializers
                     $instance = $this->container->get($listener);
 
                     $instance->listen();
+                }
+            }
+
+            if($initializer instanceof HasControllers){
+                $strategy = $this->container->get(RestStrategy::class);
+                foreach($initializer->getControllers() as $controller){
+                    $strategy->registerRoute(fn() => $this->container->get($controller));
                 }
             }
 
