@@ -42,7 +42,7 @@ trait CanLoadInitializers
     }
 
     /**
-     * @param HasClassDefinitions|Loadable|HasLoadCondition|HasFacades|HasListeners|HasMutations|HasEventBindings $initializer
+     * @param HasClassDefinitions|Loadable|HasLoadCondition|HasFacades|HasListeners|HasMutations|HasEventBindings|HasControllers $initializer
      * @return void
      * @throws LoaderException
      */
@@ -77,7 +77,11 @@ trait CanLoadInitializers
                 foreach ($initializer->getEventBindings() as $binding => $actions) {
                     $strategy = $this->container->get(ActionBindingStrategy::class);
                     foreach ($actions as $action) {
-                        $strategy->bindAction($binding, $action);
+                        if(is_array($action)){
+                            $strategy->bindAction($binding, $action['action'], $action['transformer']);
+                        }else {
+                            $strategy->bindAction($binding, $action);
+                        }
                     }
                 }
             }
