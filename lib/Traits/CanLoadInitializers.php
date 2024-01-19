@@ -5,7 +5,8 @@ namespace PHPNomad\Loader\Traits;
 use PHPNomad\Di\Container;
 use PHPNomad\Di\Exceptions\DiException;
 use PHPNomad\Di\Interfaces\CanSetContainer;
-use PHPNomad\Events\Interfaces\CanListen;
+use PHPNomad\Events\Interfaces\Event;
+use PHPNomad\Events\Interfaces\EventStrategy;
 use PHPNomad\Events\Interfaces\HasEventBindings;
 use PHPNomad\Events\Interfaces\HasListeners;
 use PHPNomad\Facade\Interfaces\HasFacades;
@@ -16,11 +17,9 @@ use PHPNomad\Loader\Interfaces\HasLoadCondition;
 use PHPNomad\Loader\Interfaces\Loadable;
 use PHPNomad\Mutator\Interfaces\HasMutations;
 use PHPNomad\Mutator\Interfaces\MutationStrategy;
-use PHPNomad\Rest\Interfaces\Controller;
 use PHPNomad\Rest\Interfaces\HasControllers;
 use PHPNomad\Rest\Interfaces\RestStrategy;
 use PHPNomad\Utils\Helpers\Arr;
-use PHPNomad\Utils\Helpers\Str;
 
 trait CanLoadInitializers
 {
@@ -77,27 +76,29 @@ trait CanLoadInitializers
                 foreach ($initializer->getEventBindings() as $binding => $actions) {
                     $strategy = $this->container->get(ActionBindingStrategy::class);
                     foreach ($actions as $action) {
-                        if(is_array($action)){
+                        if (is_array($action)) {
                             $strategy->bindAction($binding, $action['action'], $action['transformer']);
-                        }else {
+                        } else {
                             $strategy->bindAction($binding, $action);
                         }
                     }
                 }
             }
 
-            if($initializer instanceof HasListeners){
-                foreach($initializer->getListeners() as $listener){
-                    /** @var CanListen $instance */
-                    $instance = $this->container->get($listener);
+            if ($initializer instanceof HasListeners) {
+                /** @var EventStrategy $instance */
+                $events = $this->container->get(EventStrategy::class);
 
-                    $instance->listen();
+                foreach ($initializer->getListeners() as $event => $handlers) {
+                    foreach (Arr::wrap($handlers) as $handler) {
+                        $events->attach($event, fn(Event $event) => $this->container->get($handler)->handle($event));
+                    }
                 }
             }
 
-            if($initializer instanceof HasControllers){
+            if ($initializer instanceof HasControllers) {
                 $strategy = $this->container->get(RestStrategy::class);
-                foreach($initializer->getControllers() as $controller){
+                foreach ($initializer->getControllers() as $controller) {
                     $strategy->registerRoute(fn() => $this->container->get($controller));
                 }
             }
