@@ -59,7 +59,7 @@ trait CanLoadInitializers
 
             if ($initializer instanceof HasClassDefinitions) {
                 foreach ($initializer->getClassDefinitions() as $concrete => $abstracts) {
-                    $this->container->bind($concrete, ...Arr::wrap($abstracts));
+                    $this->container->bindSingleton($concrete, ...Arr::wrap($abstracts));
                 }
             }
 
