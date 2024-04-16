@@ -75,7 +75,7 @@ trait CanLoadInitializers
             if ($initializer instanceof HasEventBindings) {
                 foreach ($initializer->getEventBindings() as $binding => $actions) {
                     $strategy = $this->container->get(ActionBindingStrategy::class);
-                    foreach ($actions as $action) {
+                    foreach (Arr::wrap($actions) as $action) {
                         if (is_array($action)) {
                             $strategy->bindAction($binding, $action['action'], $action['transformer']);
                         } else {
