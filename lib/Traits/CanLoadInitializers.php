@@ -91,7 +91,10 @@ trait CanLoadInitializers
 
                 foreach ($initializer->getListeners() as $event => $handlers) {
                     foreach (Arr::wrap($handlers) as $handler) {
-                        $events->attach($event, fn(Event $event) => $this->container->get($handler)->handle($event));
+                        $events->attach(
+                            $event,
+                            fn(Event $event) => $this->container->get($handler)->handle($event)
+                        );
                     }
                 }
             }
