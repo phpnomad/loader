@@ -19,6 +19,8 @@ use PHPNomad\Mutator\Interfaces\HasMutations;
 use PHPNomad\Mutator\Interfaces\MutationStrategy;
 use PHPNomad\Rest\Interfaces\HasControllers;
 use PHPNomad\Rest\Interfaces\RestStrategy;
+use PHPNomad\Update\Events\UpgradeRoutinesRequested;
+use PHPNomad\Update\Interfaces\HasUpdates;
 use PHPNomad\Utils\Helpers\Arr;
 
 trait CanLoadInitializers
@@ -97,6 +99,16 @@ trait CanLoadInitializers
                         );
                     }
                 }
+            }
+
+            if ($initializer instanceof HasUpdates) {
+                /** @var EventStrategy $instance */
+                $events = $this->container->get(EventStrategy::class);
+
+                $events->attach(
+                    UpgradeRoutinesRequested::class,
+                    fn(UpgradeRoutinesRequested $event) => $event->maybeRegisterRoutines(...$initializer->getRoutines())
+                );
             }
 
             if ($initializer instanceof HasControllers) {
