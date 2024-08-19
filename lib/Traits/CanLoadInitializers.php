@@ -2,9 +2,9 @@
 
 namespace PHPNomad\Loader\Traits;
 
-use PHPNomad\Di\Container;
 use PHPNomad\Di\Exceptions\DiException;
 use PHPNomad\Di\Interfaces\CanSetContainer;
+use PHPNomad\Di\Interfaces\InstanceProvider;
 use PHPNomad\Events\Interfaces\Event;
 use PHPNomad\Events\Interfaces\EventStrategy;
 use PHPNomad\Events\Interfaces\HasEventBindings;
@@ -25,7 +25,7 @@ use PHPNomad\Utils\Helpers\Arr;
 
 trait CanLoadInitializers
 {
-    protected Container $container;
+    protected InstanceProvider $container;
 
     /**
      * @var array[HasClassDefinitions|Loadable|HasLoadCondition|HasFacades|HasListeners|HasMutations|HasEventBindings]
