@@ -10,7 +10,7 @@ use PHPNomad\Events\Interfaces\EventStrategy;
 use PHPNomad\Events\Interfaces\HasEventBindings;
 use PHPNomad\Events\Interfaces\HasListeners;
 use PHPNomad\Facade\Interfaces\HasFacades;
-use PHPNomad\Integrations\WordPress\Strategies\ActionBindingStrategy;
+use PHPNomad\Events\Interfaces\ActionBindingStrategy;
 use PHPNomad\Loader\Exceptions\LoaderException;
 use PHPNomad\Loader\Interfaces\HasClassDefinitions;
 use PHPNomad\Loader\Interfaces\HasLoadCondition;
