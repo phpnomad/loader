@@ -2,6 +2,8 @@
 
 namespace PHPNomad\Loader\Traits;
 
+use PHPNomad\Console\Interfaces\ConsoleStrategy;
+use PHPNomad\Console\Interfaces\HasCommands;
 use PHPNomad\Di\Exceptions\DiException;
 use PHPNomad\Di\Interfaces\CanSetContainer;
 use PHPNomad\Di\Interfaces\InstanceProvider;
@@ -115,6 +117,13 @@ trait CanLoadInitializers
                 $strategy = $this->container->get(RestStrategy::class);
                 foreach ($initializer->getControllers() as $controller) {
                     $strategy->registerRoute(fn() => $this->container->get($controller));
+                }
+            }
+
+            if ($initializer instanceof HasCommands) {
+                $strategy = $this->container->get(ConsoleStrategy::class);
+                foreach ($initializer->getCommands() as $command) {
+                    $strategy->registerCommand(fn() => $this->container->get($command));
                 }
             }
 
