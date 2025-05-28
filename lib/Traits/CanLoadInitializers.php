@@ -21,6 +21,9 @@ use PHPNomad\Mutator\Interfaces\HasMutations;
 use PHPNomad\Mutator\Interfaces\MutationStrategy;
 use PHPNomad\Rest\Interfaces\HasControllers;
 use PHPNomad\Rest\Interfaces\RestStrategy;
+use PHPNomad\Tasks\Interfaces\HasTaskHandlers;
+use PHPNomad\Tasks\Interfaces\Task;
+use PHPNomad\Tasks\Interfaces\TaskStrategy;
 use PHPNomad\Update\Events\UpgradeRoutinesRequested;
 use PHPNomad\Update\Interfaces\HasUpdates;
 use PHPNomad\Utils\Helpers\Arr;
@@ -29,14 +32,8 @@ trait CanLoadInitializers
 {
     protected InstanceProvider $container;
 
-    /**
-     * @var array[HasClassDefinitions|Loadable|HasLoadCondition|HasFacades|HasListeners|HasMutations|HasEventBindings]
-     */
     protected array $initializers = [];
 
-    /**
-     * @throws LoaderException
-     */
     protected function loadInitializers()
     {
         foreach ($this->initializers as $initializer) {
@@ -44,11 +41,6 @@ trait CanLoadInitializers
         }
     }
 
-    /**
-     * @param HasClassDefinitions|Loadable|HasLoadCondition|HasFacades|HasListeners|HasMutations|HasEventBindings|HasControllers $initializer
-     * @return void
-     * @throws LoaderException
-     */
     protected function loadInitializer($initializer): void
     {
         try {
@@ -56,7 +48,6 @@ trait CanLoadInitializers
                 $initializer->setContainer($this->container);
             }
 
-            // Bail early if this has a load condition preventing it from loading.
             if ($initializer instanceof HasLoadCondition && !$initializer->shouldLoad()) {
                 return;
             }
@@ -90,7 +81,6 @@ trait CanLoadInitializers
             }
 
             if ($initializer instanceof HasListeners) {
-                /** @var EventStrategy $instance */
                 $events = $this->container->get(EventStrategy::class);
 
                 foreach ($initializer->getListeners() as $event => $handlers) {
@@ -103,8 +93,19 @@ trait CanLoadInitializers
                 }
             }
 
+            if ($initializer instanceof HasTaskHandlers) {
+                $strategy = $this->container->get(TaskStrategy::class);
+
+                foreach ($initializer->getTaskHandlers() as $taskClass => $handlers) {
+                    foreach (Arr::wrap($handlers) as $handlerClass) {
+                        $strategy->attach($taskClass, fn(Task $task) =>
+                            $this->container->get($handlerClass)->handle($task)
+                        );
+                    }
+                }
+            }
+
             if ($initializer instanceof HasUpdates) {
-                /** @var EventStrategy $instance */
                 $events = $this->container->get(EventStrategy::class);
 
                 $events->attach(
