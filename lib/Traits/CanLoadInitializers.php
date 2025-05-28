@@ -32,8 +32,15 @@ trait CanLoadInitializers
 {
     protected InstanceProvider $container;
 
+    /**
+     * @var array[HasClassDefinitions|Loadable|HasLoadCondition|HasFacades|HasListeners|HasMutations|HasEventBindings|HasTaskHandlers]
+     */
     protected array $initializers = [];
 
+    /**
+     * @return void
+     * @throws LoaderException
+     */
     protected function loadInitializers()
     {
         foreach ($this->initializers as $initializer) {
