@@ -216,20 +216,20 @@
         },
         {
             "name": "phpnomad/utils",
-            "version": "1.0.0",
+            "version": "1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpnomad/utils.git",
-                "reference": "bf47baea7ca6d5245f789fc93396d01f2ae5cc34"
+                "reference": "00b053f8f3f87419d2d2a9e2e3a8285bb9e1ff55"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpnomad/utils/zipball/bf47baea7ca6d5245f789fc93396d01f2ae5cc34",
-                "reference": "bf47baea7ca6d5245f789fc93396d01f2ae5cc34",
+                "url": "https://api.github.com/repos/phpnomad/utils/zipball/00b053f8f3f87419d2d2a9e2e3a8285bb9e1ff55",
+                "reference": "00b053f8f3f87419d2d2a9e2e3a8285bb9e1ff55",
                 "shasum": ""
             },
             "require-dev": {
-                "phpnomad/tests": "^0.1.0"
+                "phpnomad/tests": "^0.1.0 || ^0.3.0"
             },
             "type": "library",
             "autoload": {
@@ -250,9 +250,9 @@
             "homepage": "https://github.com/phpnomad/core",
             "support": {
                 "issues": "https://github.com/phpnomad/utils/issues",
-                "source": "https://github.com/phpnomad/utils/tree/1.0.0"
+                "source": "https://github.com/phpnomad/utils/tree/1.0.2"
             },
-            "time": "2024-12-18T16:24:57+00:00"
+            "time": "2026-01-12T21:59:57+00:00"
         }
     ],
     "packages-dev": [
@@ -4911,10 +4911,10 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {},
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": [],
-    "platform-dev": [],
+    "platform": {},
+    "platform-dev": {},
     "plugin-api-version": "2.6.0"
 }
