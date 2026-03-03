@@ -33,7 +33,8 @@
         "phpnomad/utils": "^1.0",
         "phpnomad/mutator": "^1.0",
         "phpnomad/update": "^1.0",
-        "phpnomad/di": "^1.0"
+        "phpnomad/di": "^1.0",
+        "phpnomad/graphql": "^1.0"
     },
     "config": {
         "allow-plugins": {

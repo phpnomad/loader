@@ -19,6 +19,8 @@ use PHPNomad\Loader\Interfaces\HasLoadCondition;
 use PHPNomad\Loader\Interfaces\Loadable;
 use PHPNomad\Mutator\Interfaces\HasMutations;
 use PHPNomad\Mutator\Interfaces\MutationStrategy;
+use PHPNomad\GraphQL\Interfaces\GraphQLStrategy;
+use PHPNomad\GraphQL\Interfaces\HasTypeDefinitions;
 use PHPNomad\Rest\Interfaces\HasControllers;
 use PHPNomad\Rest\Interfaces\RestStrategy;
 use PHPNomad\Tasks\Interfaces\HasTaskHandlers;
@@ -119,6 +121,13 @@ trait CanLoadInitializers
                     UpgradeRoutinesRequested::class,
                     fn(UpgradeRoutinesRequested $event) => $event->maybeRegisterRoutines(...$initializer->getRoutines())
                 );
+            }
+
+            if ($initializer instanceof HasTypeDefinitions) {
+                $strategy = $this->container->get(GraphQLStrategy::class);
+                foreach ($initializer->getTypeDefinitions() as $typeDefinition) {
+                    $strategy->registerTypeDefinition(fn() => $this->container->get($typeDefinition));
+                }
             }
 
             if ($initializer instanceof HasControllers) {
