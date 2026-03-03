@@ -173,23 +173,23 @@
         },
         {
             "name": "phpnomad/update",
-            "version": "1.0.0",
+            "version": "1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpnomad/update.git",
-                "reference": "a64dfef8e6ed874dab36fa9c2613555bf5ae27b6"
+                "reference": "c50758a39c4d7416988d2b105f462a7e46242f6b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpnomad/update/zipball/a64dfef8e6ed874dab36fa9c2613555bf5ae27b6",
-                "reference": "a64dfef8e6ed874dab36fa9c2613555bf5ae27b6",
+                "url": "https://api.github.com/repos/phpnomad/update/zipball/c50758a39c4d7416988d2b105f462a7e46242f6b",
+                "reference": "c50758a39c4d7416988d2b105f462a7e46242f6b",
                 "shasum": ""
             },
             "require": {
                 "phpnomad/event": "^1.0"
             },
             "require-dev": {
-                "phpnomad/tests": "^0.1.0"
+                "phpnomad/tests": "^0.1.0 || ^0.3.0"
             },
             "type": "library",
             "autoload": {
@@ -210,9 +210,9 @@
             "homepage": "https://github.com/phpnomad/update",
             "support": {
                 "issues": "https://github.com/phpnomad/update/issues",
-                "source": "https://github.com/phpnomad/update/tree/1.0.0"
+                "source": "https://github.com/phpnomad/update/tree/1.0.1"
             },
-            "time": "2024-12-18T16:24:44+00:00"
+            "time": "2025-12-04T18:07:26+00:00"
         },
         {
             "name": "phpnomad/utils",
