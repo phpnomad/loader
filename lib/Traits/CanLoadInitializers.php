@@ -6,6 +6,7 @@ use PHPNomad\Console\Interfaces\ConsoleStrategy;
 use PHPNomad\Console\Interfaces\HasCommands;
 use PHPNomad\Di\Exceptions\DiException;
 use PHPNomad\Di\Interfaces\CanSetContainer;
+use PHPNomad\Di\Interfaces\HasBindings;
 use PHPNomad\Di\Interfaces\InstanceProvider;
 use PHPNomad\Events\Interfaces\Event;
 use PHPNomad\Events\Interfaces\EventStrategy;
@@ -61,9 +62,9 @@ trait CanLoadInitializers
                 return;
             }
 
-            if ($initializer instanceof HasClassDefinitions) {
+            if ($initializer instanceof HasClassDefinitions && $this->container instanceof HasBindings) {
                 foreach ($initializer->getClassDefinitions() as $concrete => $abstracts) {
-                    $this->container->bindSingleton($concrete, ...Arr::wrap($abstracts));
+                    $this->container->bind($concrete, ...Arr::wrap($abstracts));
                 }
             }
 
