@@ -4,27 +4,68 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "677bedd5e5dc62cb974051401c45c4d6",
+    "content-hash": "c3008a444a23e3efa7a79d138fc04a80",
     "packages": [
         {
-            "name": "phpnomad/di",
-            "version": "1.0.0",
+            "name": "phpnomad/auth",
+            "version": "1.0.2",
             "source": {
                 "type": "git",
-                "url": "https://github.com/phpnomad/di.git",
-                "reference": "e1719564d580062ae5369b364ab1c8fd3acb2e53"
+                "url": "https://github.com/phpnomad/auth.git",
+                "reference": "3fad2b114217e343ce49ee4547d24beba2d7b47f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpnomad/di/zipball/e1719564d580062ae5369b364ab1c8fd3acb2e53",
-                "reference": "e1719564d580062ae5369b364ab1c8fd3acb2e53",
+                "url": "https://api.github.com/repos/phpnomad/auth/zipball/3fad2b114217e343ce49ee4547d24beba2d7b47f",
+                "reference": "3fad2b114217e343ce49ee4547d24beba2d7b47f",
                 "shasum": ""
             },
             "require": {
-                "phpnomad/utils": "^1.0"
+                "phpnomad/enum-polyfill": "^1.0",
+                "phpnomad/event": "^1.0"
             },
             "require-dev": {
-                "phpnomad/tests": "^0.1.0"
+                "phpnomad/tests": "^0.1.0 || ^0.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "PHPNomad\\Auth\\": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Alex Standiford",
+                    "email": "alex@standiford.us"
+                }
+            ],
+            "homepage": "https://github.com/phpnomad/core",
+            "support": {
+                "issues": "https://github.com/phpnomad/auth/issues",
+                "source": "https://github.com/phpnomad/auth/tree/1.0.2"
+            },
+            "time": "2026-06-12T10:56:17+00:00"
+        },
+        {
+            "name": "phpnomad/di",
+            "version": "2.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpnomad/di.git",
+                "reference": "2f343769c816c0574a9ed4b39f4bba0335a0de63"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpnomad/di/zipball/2f343769c816c0574a9ed4b39f4bba0335a0de63",
+                "reference": "2f343769c816c0574a9ed4b39f4bba0335a0de63",
+                "shasum": ""
+            },
+            "require-dev": {
+                "phpnomad/tests": "^0.1.0 || ^0.3.0"
             },
             "type": "library",
             "autoload": {
@@ -45,26 +86,69 @@
             "homepage": "https://github.com/phpnomad/core",
             "support": {
                 "issues": "https://github.com/phpnomad/di/issues",
-                "source": "https://github.com/phpnomad/di/tree/1.0.0"
+                "source": "https://github.com/phpnomad/di/tree/2.0.1"
             },
-            "time": "2024-12-18T17:09:23+00:00"
+            "time": "2026-06-12T10:56:38+00:00"
         },
         {
-            "name": "phpnomad/event",
-            "version": "1.0.0",
+            "name": "phpnomad/enum-polyfill",
+            "version": "1.0.2",
             "source": {
                 "type": "git",
-                "url": "https://github.com/phpnomad/event.git",
-                "reference": "c2f8f4c19bfd017086dbffb0510e20b06d7fa533"
+                "url": "https://github.com/phpnomad/enum-polyfill.git",
+                "reference": "1c36f2af9d4ed098744fb615974a949383a28448"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpnomad/event/zipball/c2f8f4c19bfd017086dbffb0510e20b06d7fa533",
-                "reference": "c2f8f4c19bfd017086dbffb0510e20b06d7fa533",
+                "url": "https://api.github.com/repos/phpnomad/enum-polyfill/zipball/1c36f2af9d4ed098744fb615974a949383a28448",
+                "reference": "1c36f2af9d4ed098744fb615974a949383a28448",
+                "shasum": ""
+            },
+            "require": {
+                "phpnomad/singleton": "^1.0"
+            },
+            "require-dev": {
+                "phpnomad/tests": "^0.1.0 || ^0.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "PHPNomad\\Enum\\": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Alex Standiford",
+                    "email": "alex@standiford.us"
+                }
+            ],
+            "homepage": "https://github.com/phpnomad/core",
+            "support": {
+                "issues": "https://github.com/phpnomad/enum-polyfill/issues",
+                "source": "https://github.com/phpnomad/enum-polyfill/tree/1.0.2"
+            },
+            "time": "2026-06-12T10:56:45+00:00"
+        },
+        {
+            "name": "phpnomad/event",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpnomad/event.git",
+                "reference": "b418d8fc90af18b7cb37e118795f9dd92ffeb538"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpnomad/event/zipball/b418d8fc90af18b7cb37e118795f9dd92ffeb538",
+                "reference": "b418d8fc90af18b7cb37e118795f9dd92ffeb538",
                 "shasum": ""
             },
             "require-dev": {
-                "phpnomad/tests": "^0.1.0"
+                "phpnomad/tests": "^0.1.0 || ^0.3.0"
             },
             "type": "library",
             "autoload": {
@@ -85,9 +169,9 @@
             "homepage": "https://github.com/phpnomad/core",
             "support": {
                 "issues": "https://github.com/phpnomad/event/issues",
-                "source": "https://github.com/phpnomad/event/tree/1.0.0"
+                "source": "https://github.com/phpnomad/event/tree/1.0.1"
             },
-            "time": "2024-12-18T17:10:47+00:00"
+            "time": "2026-06-12T10:56:48+00:00"
         },
         {
             "name": "phpnomad/facade",
@@ -132,6 +216,90 @@
             "time": "2024-12-18T17:11:21+00:00"
         },
         {
+            "name": "phpnomad/graphql",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpnomad/graphql.git",
+                "reference": "4f7e5fa15b8460e59d5e58189473a9308d142950"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpnomad/graphql/zipball/4f7e5fa15b8460e59d5e58189473a9308d142950",
+                "reference": "4f7e5fa15b8460e59d5e58189473a9308d142950",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.2",
+                "phpnomad/http": "^1.1"
+            },
+            "require-dev": {
+                "phpnomad/tests": "^0.1.0 || ^0.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "PHPNomad\\GraphQL\\": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Abstract GraphQL interfaces for the PHPNomad ecosystem",
+            "homepage": "https://github.com/phpnomad/core",
+            "support": {
+                "issues": "https://github.com/phpnomad/graphql/issues",
+                "source": "https://github.com/phpnomad/graphql/tree/1.0.1"
+            },
+            "time": "2026-06-12T10:57:05+00:00"
+        },
+        {
+            "name": "phpnomad/http",
+            "version": "1.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpnomad/http.git",
+                "reference": "ce5c8b0795b1c7452de0759d12f836a5ffc21684"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpnomad/http/zipball/ce5c8b0795b1c7452de0759d12f836a5ffc21684",
+                "reference": "ce5c8b0795b1c7452de0759d12f836a5ffc21684",
+                "shasum": ""
+            },
+            "require": {
+                "phpnomad/auth": "^1.0",
+                "phpnomad/enum-polyfill": "^1.0"
+            },
+            "require-dev": {
+                "phpnomad/tests": "^0.1.0 || ^0.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "PHPNomad\\Http\\": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Alex Standiford",
+                    "email": "alex@standiford.us"
+                }
+            ],
+            "description": "Foundational components for working with HTTP request/responses.",
+            "homepage": "https://github.com/phpnomad/core",
+            "support": {
+                "issues": "https://github.com/phpnomad/http/issues",
+                "source": "https://github.com/phpnomad/http/tree/1.1.1"
+            },
+            "time": "2026-06-12T10:57:08+00:00"
+        },
+        {
             "name": "phpnomad/mutator",
             "version": "1.0.0",
             "source": {
@@ -170,6 +338,46 @@
                 "source": "https://github.com/phpnomad/mutator/tree/1.0.0"
             },
             "time": "2024-12-18T16:20:52+00:00"
+        },
+        {
+            "name": "phpnomad/singleton",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpnomad/singleton.git",
+                "reference": "3d5c64fa3670a1353d94efca9231e719af44d8b6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpnomad/singleton/zipball/3d5c64fa3670a1353d94efca9231e719af44d8b6",
+                "reference": "3d5c64fa3670a1353d94efca9231e719af44d8b6",
+                "shasum": ""
+            },
+            "require-dev": {
+                "phpnomad/tests": "^0.1.0 || ^0.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "PHPNomad\\Singleton\\": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Alex Standiford",
+                    "email": "alex@standiford.us"
+                }
+            ],
+            "homepage": "https://github.com/phpnomad/core",
+            "support": {
+                "issues": "https://github.com/phpnomad/singleton/issues",
+                "source": "https://github.com/phpnomad/singleton/tree/1.0.1"
+            },
+            "time": "2026-06-12T10:57:53+00:00"
         },
         {
             "name": "phpnomad/update",
@@ -4916,5 +5124,5 @@
     "prefer-lowest": false,
     "platform": {},
     "platform-dev": {},
-    "plugin-api-version": "2.6.0"
+    "plugin-api-version": "2.9.0"
 }
